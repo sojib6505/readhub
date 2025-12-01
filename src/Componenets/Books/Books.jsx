@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router"
 import Book from "../Book/Book"
 
+
 export default function Books() {
   const books = useLoaderData()
+  
   return (
     <>
     <h2 className="text-center text-4xl font-bold mb-10">Books</h2>

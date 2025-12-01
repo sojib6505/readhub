@@ -1,11 +1,15 @@
+import { useContext, useState } from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router";
+import { ProductContext } from "../../ProductContext";
+
 
 export default function Book({book}) {
-    
+    const {handleProductId} = useContext(ProductContext)
     const {bookId,bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing} = book
-    console.log(image)
   return (
-    <div className="p-6 border border-[#131313] rounded-xl mx-auto">
+   <Link onClick={()=>handleProductId(bookId)} to='/productDetails'>
+    <div className="p-10 border border-[#131313] rounded-xl mx-auto">
        <div className="w-[326px]  flex justify-center py-10 bg-gray-300 rounded-xl">
           <img className="  h-[166px]" src={image} alt="book-img" />
        </div>
@@ -21,6 +25,6 @@ export default function Book({book}) {
         <span className="font-semibold">{category}</span>
         <span className="flex items-center gap-2 font-semibold">{rating}<CiStar/></span>
       </div>
-    </div>
+    </div></Link>
   )
 }

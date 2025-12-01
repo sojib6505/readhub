@@ -3,6 +3,7 @@ import Root from "../Root/Root"
 import Home from "../Pages/Home/Home"
 import ErrorPage from "../Pages/ErrorPage/ErrorPage"
 import Books from "../Componenets/Books/Books"
+import ProductDetails from "../Pages/ProductDetails/ProductDetails"
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -15,6 +16,11 @@ export const router = createBrowserRouter([
     },
     {path:'books',
       Component: Books
+    },
+    {
+      path:'productDetails',
+      loader:()=> fetch('booksData.json'),
+      Component: ProductDetails
     }
    ]
   }
