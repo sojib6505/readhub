@@ -2,8 +2,8 @@ import { Link } from "react-router"
 
 function Navbar() {
     const links = <>
-      <Link className="m-2">Home</Link>
-      <Link className="m-2">Listed Books</Link>
+      <Link to='/' className="m-2">Home</Link>
+      <Link to='/listedbook' className="m-2">Listed Books</Link>
       <Link className="m-2">Pages to Read</Link>
     </>
     return (
